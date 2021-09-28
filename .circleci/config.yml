@@ -3,17 +3,9 @@ version: 2.1
 
 orbs:
   node: circleci/node@4.7.0
-  newman: postman/newman@0.0.2
 
 jobs:
-  newman-collection-run:
-    executor: newman/postman-newman-docker
-    steps:
-      - checkout
-      - newman/newman-run:
-        collection: ./postman/api_test.json
-
-  demoblaze_test:
+  demoblaze_tests:
     docker:
       - image: 'node:16-bullseye-slim'
         environment:
@@ -27,7 +19,10 @@ jobs:
       - run: npm install cypress --save-dev
       - run: npm install
       - run:
-          name: Run tests
+          name: Run Postman Test
+          command: newman run postman/api_test.json
+      - run:
+          name: Run Cypress Test
           command: npm run test
       - store_artifacts:
           path: cypress/videos
@@ -37,5 +32,4 @@ jobs:
 workflows:
   cypress-test:
     jobs:
-      - newman-collection-run
-      - demoblaze_test
+      - demoblaze_tests
