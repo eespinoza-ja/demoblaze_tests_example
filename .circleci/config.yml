@@ -30,11 +30,11 @@ jobs:
           name: Install NPM depedencies
           command: npm install
       - run:
-          name: Run Postman Test
-          command: newman run postman/api_test.json
-      - run:
           name: Run Cypress Test
           command: npm run test
+      - run:
+          name: Run Postman Test
+          command: newman run postman/api_test.json
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
