@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "test": "cypress run --spec 'cypress/integration/demoblaze.spec.js'"
+    "api_test": "npx newman run postman/api_test.json",
+    "cy_test": "cypress run --spec 'cypress/integration/demoblaze.spec.js'"
   },
   "devDependencies": {
     "cypress": "^8.4.0",

@@ -31,10 +31,10 @@ jobs:
           command: npm install
       - run:
           name: Run Postman Test
-          command: npx newman run postman/api_test.json      
+          command: npm run api_test
       - run:
           name: Run Cypress Test
-          command: npm run test
+          command: npm run cy_test
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
