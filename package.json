@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "test": "cypress run --spec 'cypress/integration/demoblaze.spec.js'"
+  },
+  "devDependencies": {
+    "cypress": "^8.4.0"
+  }
+}
