@@ -1,0 +1,32 @@
+# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
+version: 2.1
+
+orbs:
+  node: circleci/node@4.7.0
+
+jobs:
+  demoblaze_test:
+      docker:
+        - image: 'node:16-bullseye-slim'
+          environment:
+              TERM: xterm
+      working_directory: ~/project
+      parallelism: 1
+      steps:
+        - checkout
+        - run: apt-get update
+        - run: apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+        - run: npm install cypress --save-dev
+        - run: npm install
+        - run:
+            name: Run tests
+            command: npm run test
+        - store_artifacts:
+            path: cypress/videos
+        - store_artifacts:
+            path: cypress/screenshots
+
+workflows:
+  cypress-test:
+    jobs:
+      - demoblaze_test
