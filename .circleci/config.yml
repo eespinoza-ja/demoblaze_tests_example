@@ -32,7 +32,7 @@ jobs:
       - run:
           name: Run Postman Test
           command: npx newman run postman/api_test.json      
-          - run:
+      - run:
           name: Run Cypress Test
           command: npm run test
       - store_artifacts:
