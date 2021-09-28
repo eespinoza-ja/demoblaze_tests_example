@@ -22,10 +22,10 @@ jobs:
           command: apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
       - run: 
           name: Install Cypress depedencies
-          command: run: npm install cypress
+          command: npm install cypress
       - run: 
           name: Install Newman depedencies
-          command: run: npm install newman
+          command: npm install newman
       - run:
           name: Run Postman Test
           command: newman run postman/api_test.json
