@@ -1,4 +1,4 @@
-# demoblaze_tests_example
+# DemoBlaze Tests Example
 
 ### `npm install`
 Install Cypress and Newman dependencies, it is necesary to launch the testing runners.
