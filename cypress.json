@@ -1,1 +1,15 @@
-{}
+{
+    "viewportHeight": 720,
+    "viewportWidth": 1280,   
+    "defaultCommandTimeout": 15000,
+    "env": {
+        "username": "usuario_122333",
+        "password": "usuario_122333",
+        "name":"Usuario1",
+        "country":"Ecuador",
+        "city":"Cuenca",
+        "card":"1234 5678 9012 3456",
+        "month":"09",
+        "year":"22"
+      }
+  }
